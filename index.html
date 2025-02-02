@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NZ Tax & ACC Savings Calculator">
+    <title>NZ Tax Calculator</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>NZ Tax & Savings Calculator</h1>
+        
+        <div class="input-group">
+            <label for="income">Annual Income (NZ$):</label>
+            <input type="number" id="income" placeholder="Enter gross annual income">
+        </div>
+
+        <div class="input-group">
+            <label for="acc-rate">ACC Rate (%):</label>
+            <input type="number" id="acc-rate" step="0.01" value="1.39" placeholder="ACC levy rate">
+        </div>
+
+        <div class="input-group">
+            <label for="other-fees">Other Annual Fees (NZ$):</label>
+            <input type="number" id="other-fees" value="0" placeholder="Additional fees">
+        </div>
+
+        <div class="button-group">
+            <button onclick="calculateTax()">Calculate</button>
+            <button onclick="resetCalculator()" class="reset">Reset</button>
+        </div>
+
+        <div id="results">
+            <div class="result-box">
+                <h3>Weekly Savings Needed</h3>
+                <p id="weekly">NZ$ 0.00</p>
+            </div>
+            <div class="result-box">
+                <h3>Monthly Savings Needed</h3>
+                <p id="monthly">NZ$ 0.00</p>
+            </div>
+            <div class="result-box">
+                <h3>Yearly Total</h3>
+                <p id="yearly">NZ$ 0.00</p>
+            </div>
+            <p class="note">These amounts represent what you should save <strong>each week/month</strong> to cover your total annual tax obligations.</p>
+        </div>
+
+        <div class="tax-breakdown">
+            <h3>Breakdown</h3>
+            <p id="tax-amount">Income Tax: NZ$ 0.00</p>
+            <p id="acc-amount">ACC Levy: NZ$ 0.00</p>
+            <p id="fees-amount">Other Fees: NZ$ 0.00</p>
+        </div>
+    </div>
+
+    <script src="js/calculator.js"></script>
+</body>
+</html>
