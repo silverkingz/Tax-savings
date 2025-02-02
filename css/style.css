@@ -1,0 +1,158 @@
+:root {
+    --primary: #2c3e50;
+    --secondary: #3498db;
+    --accent: #27ae60;
+    --error: #e74c3c;
+    --background: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--background);
+    margin: 0;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    background: white;
+    max-width: 600px;
+    width: 100%;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.input-section {
+    margin-bottom: 1.5rem;
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #dfe3e6;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: var(--secondary);
+    outline: none;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+button {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#calculateBtn {
+    background: var(--secondary);
+    color: white;
+}
+
+#calculateBtn:hover {
+    background: #2980b9;
+}
+
+.secondary {
+    background: var(--error);
+    color: white;
+}
+
+.secondary:hover {
+    background: #c0392b;
+}
+
+.results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.result-card {
+    background: var(--background);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.result-card h3 {
+    color: #7f8c8d;
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+}
+
+.amount {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.breakdown {
+    background: var(--background);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.breakdown h2 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.75rem 0;
+    color: var(--primary);
+}
+
+@media (max-width: 480px) {
+    .input-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .results {
+        grid-template-columns: 1fr;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+}
