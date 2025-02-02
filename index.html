@@ -3,56 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NZ Tax Calculator</title>
-    <link rel="stylesheet" href="style.css">
+    <title>NZ Tax & Savings Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>NZ Tax & Savings Calculator</h1>
+    <div class="calculator">
+        <h1>NZ Tax Savings Planner</h1>
         
-        <div class="input-group">
-            <label for="income">Annual Income (NZ$):</label>
-            <input type="number" id="income" placeholder="Enter gross income">
+        <div class="input-section">
+            <div class="input-group">
+                <label for="income">Annual Income (NZ$):</label>
+                <input type="number" id="income" placeholder="Enter gross income">
+            </div>
+            
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="acc">ACC Rate (%):</label>
+                    <input type="number" id="acc" step="0.01" value="1.39">
+                </div>
+                <div class="input-group">
+                    <label for="fees">Other Fees (NZ$):</label>
+                    <input type="number" id="fees" value="0">
+                </div>
+            </div>
         </div>
 
-        <div class="input-group">
-            <label for="acc">ACC Rate (%):</label>
-            <input type="number" id="acc" step="0.01" value="1.39">
-        </div>
-
-        <div class="input-group">
-            <label for="fees">Other Fees (NZ$):</label>
-            <input type="number" id="fees" value="0">
-        </div>
-
-        <div class="button-group">
-            <button onclick="calculate()">Calculate</button>
-            <button onclick="reset()" class="reset">Reset</button>
+        <div class="controls">
+            <button id="calculateBtn">Calculate</button>
+            <button id="resetBtn" class="secondary">Reset</button>
         </div>
 
         <div class="results">
-            <div class="result-box">
+            <div class="result-card">
                 <h3>Weekly Savings</h3>
-                <p id="weekly">NZ$ 0.00</p>
+                <div class="amount" id="weekly">$0.00</div>
             </div>
-            <div class="result-box">
+            <div class="result-card">
                 <h3>Monthly Savings</h3>
-                <p id="monthly">NZ$ 0.00</p>
+                <div class="amount" id="monthly">$0.00</div>
             </div>
-            <div class="result-box">
+            <div class="result-card">
                 <h3>Yearly Total</h3>
-                <p id="yearly">NZ$ 0.00</p>
+                <div class="amount" id="yearly">$0.00</div>
             </div>
         </div>
 
         <div class="breakdown">
             <h2>Tax Breakdown</h2>
-            <p>Income Tax: <span id="tax">NZ$ 0.00</span></p>
-            <p>ACC Levy: <span id="acclevy">NZ$ 0.00</span></p>
-            <p>Other Fees: <span id="otherfees">NZ$ 0.00</span></p>
+            <div class="breakdown-item">
+                <span>Income Tax:</span>
+                <span id="taxAmount">$0.00</span>
+            </div>
+            <div class="breakdown-item">
+                <span>ACC Levy:</span>
+                <span id="accAmount">$0.00</span>
+            </div>
+            <div class="breakdown-item">
+                <span>Other Fees:</span>
+                <span id="feesAmount">$0.00</span>
+            </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
