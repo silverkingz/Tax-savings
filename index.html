@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="NZ Tax & ACC Savings Calculator">
     <title>NZ Tax Calculator</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="calculator-container">
@@ -13,48 +12,47 @@
         
         <div class="input-group">
             <label for="income">Annual Income (NZ$):</label>
-            <input type="number" id="income" placeholder="Enter gross annual income">
+            <input type="number" id="income" placeholder="Enter gross income">
         </div>
 
         <div class="input-group">
             <label for="acc-rate">ACC Rate (%):</label>
-            <input type="number" id="acc-rate" step="0.01" value="1.39" placeholder="ACC levy rate">
+            <input type="number" id="acc-rate" step="0.01" value="1.39">
         </div>
 
         <div class="input-group">
-            <label for="other-fees">Other Annual Fees (NZ$):</label>
-            <input type="number" id="other-fees" value="0" placeholder="Additional fees">
+            <label for="other-fees">Other Fees (NZ$):</label>
+            <input type="number" id="other-fees" value="0">
         </div>
 
         <div class="button-group">
-            <button onclick="calculateTax()">Calculate</button>
-            <button onclick="resetCalculator()" class="reset">Reset</button>
+            <button id="calculate-btn">Calculate</button>
+            <button id="reset-btn" class="reset">Reset</button>
         </div>
 
-        <div id="results">
-            <div class="result-box">
-                <h3>Weekly Savings Needed</h3>
-                <p id="weekly">NZ$ 0.00</p>
+        <div class="results-section">
+            <div class="result-card">
+                <h3>Weekly Savings</h3>
+                <div class="amount" id="weekly">$0.00</div>
             </div>
-            <div class="result-box">
-                <h3>Monthly Savings Needed</h3>
-                <p id="monthly">NZ$ 0.00</p>
+            <div class="result-card">
+                <h3>Monthly Savings</h3>
+                <div class="amount" id="monthly">$0.00</div>
             </div>
-            <div class="result-box">
+            <div class="result-card">
                 <h3>Yearly Total</h3>
-                <p id="yearly">NZ$ 0.00</p>
+                <div class="amount" id="yearly">$0.00</div>
             </div>
-            <p class="note">These amounts represent what you should save <strong>each week/month</strong> to cover your total annual tax obligations.</p>
         </div>
 
-        <div class="tax-breakdown">
-            <h3>Breakdown</h3>
-            <p id="tax-amount">Income Tax: NZ$ 0.00</p>
-            <p id="acc-amount">ACC Levy: NZ$ 0.00</p>
-            <p id="fees-amount">Other Fees: NZ$ 0.00</p>
+        <div class="breakdown">
+            <h2>Breakdown</h2>
+            <p>Income Tax: <span id="tax-amount">$0.00</span></p>
+            <p>ACC Levy: <span id="acc-amount">$0.00</span></p>
+            <p>Other Fees: <span id="fees-amount">$0.00</span></p>
         </div>
     </div>
 
-    <script src="js/calculator.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
